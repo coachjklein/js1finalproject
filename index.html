@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ToDoApp</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+  <div id="myDIV" class="header">
+    <h2>Checklist</h2>
+    <input type="text" id="myInput" placeholder="Item..." required minlength="1" maxlength="100">
+    <span onclick="newElement()" class="addBtn">Add To Do</span>
+  </div>
+  <ul id="myUL"></ul>
   <script src="js/scripts.js"></script>
 </body>
 </html>
