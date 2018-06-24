@@ -1,4 +1,3 @@
-//eventlistener for enter button to add to list
 const input = document.querySelector('#myInput');
 input.addEventListener('keyup',function(e){
     if (e.keyCode === 13) {
@@ -6,6 +5,24 @@ input.addEventListener('keyup',function(e){
   }
 });
 
+// Create an "edit" button and append it to each item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "edit";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
 
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
@@ -43,7 +60,7 @@ function newElement() {
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === '') {
-    alert("You must write something!");
+    alert("Please write something");
   } else {
     document.getElementById("myUL").appendChild(li);
   }
